@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-xero",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Xero (Accounting) MCP Pack",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-eaa40101a435d834b4f571ef1812586bd48ec26cd190074e9cbc9425b46d04d1",
-    "sourceCommit": "b0fb3c31386cf0256dcf1e2f1b3440435a87ec35"
+    "sourceHash": "v1-c5f4e318ae0e77f8f6142912c26a46a3422f9542dac0e0b7c84cbad0c5544e0c",
+    "sourceCommit": "2cb50b368da3267446f2b6f6a3ddbd3d0eed3d73"
   }
 }
