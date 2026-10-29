@@ -1,0 +1,91 @@
+[
+  {
+    "name": "list_organisations",
+    "description": "List the Xero organisations (tenants) the connected account can access, with tenant id, name, and type. Xero accounting is multi-tenant — use this first to discover the tenant_id for a specific organisation, then pass it to the other accounting tools to target that org.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "list_invoices",
+    "description": "List invoices and bills from a Xero accounting organisation. Returns compact invoice summaries (number, type, status, contact, dates, total, amount due, currency) for bookkeeping, accounts-receivable, and accounts-payable review. Supports Xero filter expressions and pagination.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "tenant_id": {
+          "type": "string",
+          "description": "Optional Xero tenant (organisation) id to target. If omitted, the first connected organisation is used. Get ids from list_organisations."
+        },
+        "where": {
+          "type": "string",
+          "description": "Optional Xero filter expression (e.g. 'Status==\"AUTHORISED\"' or 'Type==\"ACCREC\"'). Applied as the Xero `where` query parameter."
+        },
+        "page": {
+          "type": "number",
+          "description": "Page number for pagination (default 1). Xero returns up to 100 invoices per page."
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "list_contacts",
+    "description": "List contacts (customers and suppliers) from a Xero accounting organisation. Returns name, email, status, and customer/supplier flags. Use for accounting, bookkeeping, and accounts-receivable/payable workflows. Supports Xero filter expressions and pagination.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "tenant_id": {
+          "type": "string",
+          "description": "Optional Xero tenant (organisation) id to target. If omitted, the first connected organisation is used. Get ids from list_organisations."
+        },
+        "where": {
+          "type": "string",
+          "description": "Optional Xero filter expression (e.g. 'IsCustomer==true' or 'ContactStatus==\"ACTIVE\"'). Applied as the Xero `where` query parameter."
+        },
+        "page": {
+          "type": "number",
+          "description": "Page number for pagination (default 1). Xero returns up to 100 contacts per page."
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "get_profit_and_loss",
+    "description": "Get the Profit and Loss (income statement) financial report from a Xero accounting organisation for an optional date range. Returns the structured Xero report (report name, date, and row sections covering revenue, expenses, and net profit). Use for financial reporting and bookkeeping analysis.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "tenant_id": {
+          "type": "string",
+          "description": "Optional Xero tenant (organisation) id to target. If omitted, the first connected organisation is used. Get ids from list_organisations."
+        },
+        "from_date": {
+          "type": "string",
+          "description": "Optional start date of the reporting period in YYYY-MM-DD format."
+        },
+        "to_date": {
+          "type": "string",
+          "description": "Optional end date of the reporting period in YYYY-MM-DD format."
+        }
+      },
+      "required": []
+    }
+  },
+  {
+    "name": "list_accounts",
+    "description": "List the chart of accounts from a Xero accounting organisation. Returns each account's code, name, type, class, and status. Use to understand an organisation's general ledger structure for bookkeeping and financial reporting.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "tenant_id": {
+          "type": "string",
+          "description": "Optional Xero tenant (organisation) id to target. If omitted, the first connected organisation is used. Get ids from list_organisations."
+        }
+      },
+      "required": []
+    }
+  }
+]
