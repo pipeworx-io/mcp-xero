@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-xero",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Xero (Accounting) MCP Pack",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "xero",
     "gatewaySlug": "xero",
-    "sourceHash": "v1-3ef4c30ef2b5b689a2b74d4433106a9797e10aecc727a8f3620a45382299c8af",
-    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
+    "sourceHash": "v1-19eb334bb1d6853d54babbb357a8e8b2e7046cf7d18274973a13c6c45afb2ced",
+    "sourceCommit": "78b905fa3a6880dfb85c79150f4bffe8cf50ef00"
   }
 }
